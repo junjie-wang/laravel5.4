@@ -341,7 +341,7 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_21_cloud"></i><h4>用户管理</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                        <li class="curr"><s></s><a href="javascript:void(0);" data-param="menuinformation|01_cloud_services" target="workspace">用户别表</a></li>
+                        <li class="curr"><s></s><a href="javascript:void(0);" data-param="teacher|01_cloud_services" target="workspace">用户别表</a></li>
                         {{--<li ><s></s><a href="javascript:void(0);" data-url="index.php?act=platform_recommend" data-param="menuinformation|02_platform_recommend" target="workspace">平台推荐</a></li>--}}
                         {{--<li ><s></s><a href="javascript:void(0);" data-url="index.php?act=best_recommend" data-param="menuinformation|03_best_recommend" target="workspace">好货推荐</a></li>--}}
                     </ul>
@@ -350,7 +350,11 @@
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_21_cloud"></i><h4>教师管理</h4></a></div>
                 <div class="sub-menu">
-
+                    <ul>
+                        <li class="curr"><s></s><a href="/admin/teachers" data-param="menuinformation|01_cloud_services" target="workspace">教师别表</a></li>
+                        {{--<li ><s></s><a href="javascript:void(0);" data-url="index.php?act=platform_recommend" data-param="menuinformation|02_platform_recommend" target="workspace">平台推荐</a></li>--}}
+                        {{--<li ><s></s><a href="javascript:void(0);" data-url="index.php?act=best_recommend" data-param="menuinformation|03_best_recommend" target="workspace">好货推荐</a></li>--}}
+                    </ul>
                 </div>
             </div>
             <div class="item">

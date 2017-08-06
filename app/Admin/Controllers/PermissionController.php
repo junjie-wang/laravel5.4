@@ -48,7 +48,6 @@ class PermissionController extends Controller
             'pid' => 'required|integer',
         ]);
 
-//        dd(request(['name', 'description', 'pid']));
         \App\Models\AdminPermission::create(request(['name', 'description', 'pid']));
 
         return redirect('admin/permissions');

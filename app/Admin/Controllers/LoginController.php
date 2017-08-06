@@ -5,6 +5,7 @@ namespace App\Admin\Controllers;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Auth;
+use Illuminate\Support\Facades\Redirect;
 
 class LoginController extends Controller
 {
@@ -23,7 +24,7 @@ class LoginController extends Controller
 
         $user = request(['name', 'password']);
         if (\Auth::guard('admin')->attempt($user)) {
-            return redirect('/admin/');
+            return Redirect::to('/admin');
         }
 
         return \Redirect::back()->withErrors('帐号密码不匹配');
