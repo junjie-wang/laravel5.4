@@ -45,4 +45,16 @@ class AdminUser extends Authenticatable
         return $this->isInRoles($permission->roles);
     }
 
+    //站内通知
+    public function notices()
+    {
+        return $this->belongsToMany(Notice::class, 'user_notice', 'user_id', 'notice_id')->withPivot(['user_id', 'notice_id']);
+    }
+
+    //给用户增加通知
+    public function addNotice($notice)
+    {
+        return $this->notices()->save($notice); //删除用detach
+    }
+
 }

@@ -66,7 +66,7 @@
                                                       @if($teacher->sex == 3)
                                                       checked
                                                     @endif
-                                            />未知 </label>
+                                            />保密 </label>
                                     <div class="form_prompt"></div>
                                 </div>
                             </div>

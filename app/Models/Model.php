@@ -8,5 +8,5 @@ class Model extends EloquentModel
 {
     protected $guard = [];
 
-    protected $fillable = ['name', 'password', 'email', 'sex', 'description', 'pid', 'mobile', 'remark', 'headImg', 'subject'];
+    protected $fillable = ['name', 'password', 'email', 'sex', 'description', 'pid', 'mobile', 'remark', 'headImg', 'subject', 'title', 'content'];
 }

@@ -42,7 +42,11 @@
             </div>
         </div>
         <div class="operate">
-
+            <li style="position: relative;">
+                <a href="admin/show" class="msg" title="查看消息" target="workspace">>&nbsp;</a>
+            {{--<li class="curr"><s></s><a href="admin/notices" data-param="finance|exchange_count" 通知列表</a></li>--}}
+            </li>
+            <i></i>
             <li><a href="" class="home" title="新窗口打开商城首页">&nbsp;</a></li>
             <li><a href="/admin/logout" class="prompt" title="安全退出管理中心">&nbsp;</a></li>
         </div>

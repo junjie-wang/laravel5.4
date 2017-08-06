@@ -33,7 +33,7 @@
                 <div class="sub-menu">
                     <ul>
                         <li class="curr"><a href="/admin/permissions"data-param="menuplatform|02_articlecat_list" target="workspace">权限管理</a></li>
-                        <li ><s></s><a href="/admin/users" data-param="menuplatform|03_article_list" target="workspace">用户管理</a></li>
+                        <li ><s></s><a href="/admin/users" data-param="menuplatform|03_article_list" target="workspace">管理员列表</a></li>
                         <li ><s></s><a href="/admin/roles"data-param="menuplatform|04_article_list" target="workspace">角色管理</a></li>
                     </ul>
                 </div>
@@ -277,7 +277,9 @@
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_06_stats"></i><h4>全站站内通知</h4></a></div>
                 <div class="sub-menu">
-
+                    <ul>
+                    <li class="curr"><s></s><a href="admin/notices" data-param="finance|exchange_count" target="workspace">通知列表</a></li>
+                    </ul>
                 </div>
             </div>
             <div class="item">

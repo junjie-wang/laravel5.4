@@ -14,6 +14,7 @@ Route::group(['prefix' => 'admin'], function(){
     Route::group(['middleware' => 'auth:admin'], function(){
         //后台首页
         Route::get('/', '\App\Admin\Controllers\HomeController@index');
+        Route::get('/show', '\App\Admin\Controllers\NoticeController@show');
         Route::group(['middleware' => 'can:platform'], function(){
             Route::group(['middleware' => 'can:system_setting'], function(){
                 //管理人员模块
@@ -45,6 +46,11 @@ Route::group(['prefix' => 'admin'], function(){
                 Route::get('teachers/{teacher}/update', '\App\Admin\Controllers\TeacherController@update');
                 Route::post('teachers/{teacher}', '\App\Admin\Controllers\TeacherController@update');
                 Route::get('teachers/{teacher}/delete', '\App\Admin\Controllers\TeacherController@delete');
+            });
+        });
+        Route::group(['middleware' => 'can:operate'], function(){
+            Route::group(['middleware' => 'can:instation_notice'], function(){
+                Route::resource('notices', '\App\Admin\Controllers\NoticeController', ['only' => ['index',  'create', 'store']]);
             });
         });
     });
