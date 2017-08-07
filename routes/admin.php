@@ -14,6 +14,8 @@ Route::group(['prefix' => 'admin'], function(){
     Route::group(['middleware' => 'auth:admin'], function(){
         //后台首页
         Route::get('/', '\App\Admin\Controllers\HomeController@index');
+        Route::get('/reset', '\App\Admin\Controllers\LoginController@resetPassword');
+        Route::post('/reset', '\App\Admin\Controllers\LoginController@resetPassword');
         Route::get('/show', '\App\Admin\Controllers\NoticeController@show');
         Route::group(['middleware' => 'can:platform'], function(){
             Route::group(['middleware' => 'can:system_setting'], function(){

@@ -123,6 +123,7 @@
             {{--</div>--}}
         </div>
         <div class="navLeftTab" id="adminNavTabs_menushopping" style="display:none;">
+            @can('curriculum_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_02_cat_and_goods"></i><h4>课程管理</h4></a></div>
                 <div class="sub-menu">
@@ -140,6 +141,8 @@
                     </ul>
                 </div>
             </div>
+            @endcan
+            @can('open_class_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_02_goods_storage"></i><h4>公开课管理</h4></a></div>
                 <div class="sub-menu">
@@ -149,6 +152,8 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
+            @can('live_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_03_promotion"></i><h4>直播管理</h4></a></div>
                 <div class="sub-menu">
@@ -171,6 +176,8 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
+            @can('class_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_04_order"></i><h4>班级管理</h4></a></div>
                 <div class="sub-menu">
@@ -189,6 +196,8 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
+            @can('theme_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_09_crowdfunding"></i><h4>话题管理</h4></a></div>
                 <div class="sub-menu">
@@ -200,15 +209,19 @@
                     {{--</ul>--}}
                 </div>
             </div>
-            <div class="item">
-                <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_15_rec"></i><h4>推荐管理</h4></a></div>
-                <div class="sub-menu">
-                    <ul>
-                        <li class="curr"><s></s><a href="javascript:void(0);" data-url="affiliate.php?act=list" data-param="menushopping|affiliate" target="workspace">推荐设置</a></li>
-                        <li ><s></s><a href="javascript:void(0);" data-url="affiliate_ck.php?act=list" data-param="menushopping|affiliate_ck" target="workspace">分成管理</a></li>
-                    </ul>
-                </div>
-            </div>
+            @endcan
+            {{--@can('tuijian_manager')--}}
+            {{--<div class="item">--}}
+                {{--<div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_15_rec"></i><h4>推荐管理</h4></a></div>--}}
+                {{--<div class="sub-menu">--}}
+                    {{--<ul>--}}
+                        {{--<li class="curr"><s></s><a href="javascript:void(0);" data-url="affiliate.php?act=list" data-param="menushopping|affiliate" target="workspace">推荐设置</a></li>--}}
+                        {{--<li ><s></s><a href="javascript:void(0);" data-url="affiliate_ck.php?act=list" data-param="menushopping|affiliate_ck" target="workspace">分成管理</a></li>--}}
+                    {{--</ul>--}}
+                {{--</div>--}}
+            {{--</div>--}}
+            {{--@endcan--}}
+            @can('qanda_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>问答管理</h4></a></div>
                 <div class="sub-menu">
@@ -223,38 +236,58 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
+            @can('note_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>笔记管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
+            @can('evaluate_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>评价管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
+            @can('classify_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>分类管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
+            @can('questions_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>题库管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
+            @can('paper_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>试卷管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
+            @can('label_manager')
+            <div class="item">
+                <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>标签管理</h4></a></div>
+                <div class="sub-menu">
+
+                </div>
+            </div>
+            @endcan
         </div>
         <div class="navLeftTab" id="adminNavTabs_finance" style="display:none;">
+            @can('consult_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_06_stats"></i><h4>咨询管理</h4></a></div>
                 <div class="sub-menu">
@@ -268,12 +301,16 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
+            @can('website_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_06_stats"></i><h4>网站公告管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
+            @can('instation_notice')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_06_stats"></i><h4>全站站内通知</h4></a></div>
                 <div class="sub-menu">
@@ -282,20 +319,26 @@
                     </ul>
                 </div>
             </div>
+            @endcan
+            @can('editarea_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_06_stats"></i><h4>编辑区管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
+            @can('page_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_06_stats"></i><h4>页面管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
         </div>
         <div class="navLeftTab" id="adminNavTabs_ectouch" style="display:none;">
+            @can('curriculum_order')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_20_ectouch"></i><h4>课程订单</h4></a></div>
                 <div class="sub-menu">
@@ -309,6 +352,8 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
+            @can('classes_order')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_22_wechat"></i><h4>班级订单</h4></a></div>
                 <div class="sub-menu">
@@ -325,8 +370,10 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
+            @can('books_order')
             <div class="item">
-                <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_23_drp"></i><h4>图书管理</h4></a></div>
+                <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_23_drp"></i><h4>图书订单</h4></a></div>
                 <div class="sub-menu">
                     {{--<ul>--}}
                         {{--<li class="curr"><s></s><a href="javascript:void(0);" data-url="../mobile/index.php?r=drp/admin/config" data-param="ectouch|01_drp_config" target="workspace">店铺设置</a></li>--}}
@@ -337,8 +384,10 @@
                     {{--</ul>--}}
                 </div>
             </div>
+            @endcan
         </div>
         <div class="navLeftTab" id="adminNavTabs_menuinformation" style="display:none;">
+            @can('user_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_21_cloud"></i><h4>用户管理</h4></a></div>
                 <div class="sub-menu">
@@ -349,6 +398,8 @@
                     </ul>
                 </div>
             </div>
+            @endcan
+            @can('teacher_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_21_cloud"></i><h4>教师管理</h4></a></div>
                 <div class="sub-menu">
@@ -359,12 +410,15 @@
                     </ul>
                 </div>
             </div>
+            @endcan
+            @can('letter_manager')
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_21_cloud"></i><h4>私信管理</h4></a></div>
                 <div class="sub-menu">
 
                 </div>
             </div>
+            @endcan
         </div>
     </div>
 </div>

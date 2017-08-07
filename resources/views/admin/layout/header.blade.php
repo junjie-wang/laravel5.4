@@ -7,7 +7,22 @@
     </div>
     <div class="module-menu">
         <ul>
-            <li data-param="menuplatform"><a href="javascript:void(0);">平台</a></li>                            					<li data-param="menushopping"><a href="javascript:void(0);">课程</a></li>                            					<li data-param="finance"><a href="javascript:void(0);">运营</a></li>                            					<li data-param="ectouch"><a href="javascript:void(0);">订单</a></li>                            					<li data-param="menuinformation"><a href="javascript:void(0);">用户</a></li>                    		</ul>
+            @can('platform')
+            <li data-param="menuplatform"><a href="javascript:void(0);">平台</a></li>
+            @endcan
+            @can('courses')
+            <li data-param="menushopping"><a href="javascript:void(0);">课程</a></li>
+            @endcan
+            @can('operate')
+            <li data-param="finance"><a href="javascript:void(0);">运营</a></li>
+            @endcan
+            @can('order')
+            <li data-param="ectouch"><a href="javascript:void(0);">订单</a></li>
+            @endcan
+            @can('user')
+            <li data-param="menuinformation"><a href="javascript:void(0);">用户</a></li>
+            @endcan
+        </ul>
     </div>
     <div class="admin-header-right">
         <div class="manager">
@@ -25,16 +40,16 @@
             <div class="manager-menu">
                 <div class="title">
                     <h4>最后登录</h4>
-                    <a>修改密码</a>
+                    <a href="admin/reset" target="workspace">修改密码</a>
                 </div>
                 <div class="login-date">
                     <strong>2017-07-27 09:19:01</strong>
                     <span>(IP:127.0.0.1)</span>
                 </div>
-                <div class="title mt10">
-                    <h4>常用操作</h4>
-                    <a href="javascript:;" class="add_nav">添加菜单</a>
-                </div>
+                {{--<div class="title mt10">--}}
+                    {{--<h4>常用操作</h4>--}}
+                    {{--<a href="javascript:;" class="add_nav">添加菜单</a>--}}
+                {{--</div>--}}
                 <div class="quick_link">
                     <ul>
                     </ul>
@@ -44,7 +59,7 @@
         <div class="operate">
             <li style="position: relative;">
                 <a href="admin/show" class="msg" title="查看消息" target="workspace">>&nbsp;</a>
-            {{--<li class="curr"><s></s><a href="admin/notices" data-param="finance|exchange_count" 通知列表</a></li>--}}
+                {{--<s id="total">3</s>--}}
             </li>
             <i></i>
             <li><a href="" class="home" title="新窗口打开商城首页">&nbsp;</a></li>

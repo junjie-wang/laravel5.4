@@ -102,7 +102,7 @@
             if(length == length2){
                 qx_items.prev().find("input[tag='chkGroup']").prop("checked",true);
             }else{
-                qx_items.prev().find("input[tag='chkGroup']").prop("checked",false);
+//                qx_items.prev().find("input[tag='chkGroup']").prop("checked",false);
             }
         });
 
