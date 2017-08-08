@@ -2,7 +2,7 @@
 
 //后台路由
 Route::group(['prefix' => 'admin'], function(){
-
+    //测试无限极分类
     Route::get('/tree', '\App\Admin\Controllers\TreeController@index');
     //登录展示页面
     Route::get('/login', '\App\Admin\Controllers\LoginController@index');
@@ -17,7 +17,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::get('/reset', '\App\Admin\Controllers\LoginController@resetPassword');
         Route::post('/reset', '\App\Admin\Controllers\LoginController@resetPassword');
         Route::get('/show', '\App\Admin\Controllers\NoticeController@show');
-        Route::group(['middleware' => 'can:platform'], function(){
+//        Route::group(['middleware' => 'can:platform'], function(){
             Route::group(['middleware' => 'can:system_setting'], function(){
                 //管理人员模块
                 Route::get('users', '\App\Admin\Controllers\UserController@index');
@@ -39,8 +39,12 @@ Route::group(['prefix' => 'admin'], function(){
                 Route::get('/permissions/create', '\App\Admin\Controllers\PermissionController@create');
                 Route::post('/permissions/store', '\App\Admin\Controllers\PermissionController@store');
             });
+//        });
+        Route::group(['middleware' => 'can:curriculum_manager'], function(){
+            //课程管理
+            Route::get('curriculums', '\App\Admin\Controllers\CurriculumController@index');
         });
-        Route::group(['middleware' => 'can:user'], function(){
+//        Route::group(['middleware' => 'can:user'], function(){
             Route::group(['middleware' => 'can:teacher_manager'], function(){
                 Route::get('teachers', '\App\Admin\Controllers\TeacherController@index');
                 Route::get('teachers/create', '\App\Admin\Controllers\TeacherController@create');
@@ -49,12 +53,12 @@ Route::group(['prefix' => 'admin'], function(){
                 Route::post('teachers/{teacher}', '\App\Admin\Controllers\TeacherController@update');
                 Route::get('teachers/{teacher}/delete', '\App\Admin\Controllers\TeacherController@delete');
             });
-        });
-        Route::group(['middleware' => 'can:operate'], function(){
+//        });
+//        Route::group(['middleware' => 'can:operate'], function(){
             Route::group(['middleware' => 'can:instation_notice'], function(){
                 Route::resource('notices', '\App\Admin\Controllers\NoticeController', ['only' => ['index',  'create', 'store']]);
             });
-        });
+//        });
     });
 });
 

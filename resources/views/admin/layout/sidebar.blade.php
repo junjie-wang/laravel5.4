@@ -128,7 +128,7 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_02_cat_and_goods"></i><h4>课程管理</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                        <li class="curr"><s></s><a href="javascript:void(0);" data-url="goods.php?act=list" data-param="menushopping|01_goods_list" target="workspace">课程列表</a></li>
+                        <li class="curr"><s></s><a href="admin/curriculums" data-url="admin/curriculums" data-param="menushopping|01_goods_list" target="workspace">课程列表</a></li>
                         <li ><s></s><a href="javascript:void(0);" data-url="category.php?act=list" data-param="menushopping|03_category_manage" target="workspace">课程分类</a></li>
                         {{--<li ><s></s><a href="javascript:void(0);" data-url="comment_manage.php?act=list" data-param="menushopping|05_comment_manage" target="workspace">用户评论</a></li>--}}
                         {{--<li ><s></s><a href="javascript:void(0);" data-url="brand.php?act=list" data-param="menushopping|06_goods_brand" target="workspace">品牌管理</a></li>--}}
