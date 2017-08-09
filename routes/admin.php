@@ -43,6 +43,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::group(['middleware' => 'can:curriculum_manager'], function(){
             //课程管理
             Route::get('curriculums', '\App\Admin\Controllers\CurriculumController@index');
+            Route::post('curriculums', '\App\Admin\Controllers\CurriculumController@index');
             Route::get('curriculums/create', '\App\Admin\Controllers\CurriculumController@create');
             Route::post('curriculums/create', '\App\Admin\Controllers\CurriculumController@create');
         });

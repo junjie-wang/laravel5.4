@@ -48,8 +48,10 @@
                                             <div class="label"><span class="require-field">*</span>&nbsp;选择分类：</div>
                                             <div class="value" id="selectid">
                                                 <select name="category" id="">
-                                                    <option value="0">ㅣㅡㅡ顶级分类</option>
-
+                                                    <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;顶级分类</option>
+                                                    @foreach($items as $item)
+                                                        <option value="{{$item->id}}">{{$item->pre.$item->catName}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>

@@ -31,16 +31,16 @@
                             </tr>
                             </thead>
                             <tbody>
-                            @foreach($categories as $category)
+                            @foreach($items as $item)
                                 <tr class="">
-                                    <td><div class="tDiv">{{$category->id}}</div></td>
-                                    <td><div class="tDiv">{{$category->catName}}</div></td>
-                                    <td><div class="tDiv">{{$category->enName}}</div></td>
+                                    <td><div class="tDiv">{{$item->id}}</div></td>
+                                    <td><div class="tDiv">{{$item->pre.$item->catName}}</div></td>
+                                    <td><div class="tDiv">{{$item->enName}}</div></td>
                                     <td class="handle">
                                         <div class="tDiv a3">
-                                            <a href="/admin/categories/{{$category->id}}/createChild" class="btn_see">添加子分类</a>
-                                            <a href="/admin/categories/{{$category->id}}/update" class="btn_see">编辑</a>
-                                            <a href="/admin/categories/{{$category->id}}/delete" class="btn_see">删除</a>
+                                            <a href="/admin/categories/{{$item->id}}/createChild" class="btn_see">添加子分类</a>
+                                            <a href="/admin/categories/{{$item->id}}/update" class="btn_see">编辑</a>
+                                            <a href="/admin/categories/{{$item->id}}/delete" class="btn_see">删除</a>
                                         </div>
                                     </td>
                                 </tr>

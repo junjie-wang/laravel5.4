@@ -8,7 +8,7 @@ $(function(){
 			$.cookie('dscUrl', url , { expires: 1 ,path:'/'});
 		}
 	})
-	
+
 	function autoLoadPage()
 	{
 		if($.cookie('dscUrl'))

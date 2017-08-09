@@ -2,16 +2,35 @@
 
 namespace App\Admin\Controllers;
 
+use App\Models\Category;
 use App\Models\Curriculum;
 use Illuminate\Http\Request;
 
 class CurriculumController extends Controller
 {
     //课程管理
-    public function index()
+    public function index(Request $request)
     {
+        $cat = new Category();
+        $items = $cat->getCategoryInfoTest();
+        if ($request->isMethod('post')) {
+            $where = [
+                ['category_id', '=', request('category')],
+                ['status', '=', request('status')],
+                ['name', 'like', '%'.request('keyword').'%']
+            ];
+            if (request('category') == 0) unset($where[0]);
+            $curriculums = Curriculum::where($where)->orderBy('id', 'desc')->paginate(15);
+            foreach ($curriculums as &$curriculum) {
+                $curriculum['category_id'] = $curriculum->category->catName;
+            }
+            return view('admin/curriculum/index', compact('curriculums', 'items'));
+        }
         $curriculums = Curriculum::orderBy('id', 'desc')->paginate(15);
-        return view('admin/curriculum/index', compact('curriculums'));
+        foreach ($curriculums as &$curriculum) {
+            $curriculum['category_id'] = $curriculum->category->catName;
+        }
+        return view('admin/curriculum/index', compact('curriculums', 'items'));
     }
 
     public function create(Request $request)
@@ -37,6 +56,8 @@ class CurriculumController extends Controller
                 return back();
             }
         }
-        return view('admin/curriculum/create');
+        $cat = new Category();
+        $items = $cat->getCategoryInfoTest();
+        return view('admin/curriculum/create', compact('items'));
     }
 }

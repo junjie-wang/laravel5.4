@@ -15,7 +15,7 @@
             <div class="flexilist">
                 <div class="common-content">
                     <div class="mian-info">
-                        <form method="POST" action="/admin/categories/create" name="theFrom" id="role_form">
+                        <form method="POST" action="/admin/categories/{{$parentCat->id}}/update" name="theFrom" id="role_form">
                             {{csrf_field()}}
                             <div class="switch_info business_info" style="background:none;">
                                 <div class="step">
@@ -23,14 +23,15 @@
                                         <div class="item">
                                             <div class="label"><span class="require-field">*</span>&nbsp;分类名：</div>
                                             <div class="value">
-                                                <input type="text" class="text" name="catName" value="" id="user_name" autocomplete="off">
+                                                <input type="text" class="text" name="catName" value="{{$parentCat->catName}}" id="user_name" autocomplete="off">
+                                                <input type="hidden" class="text" name="catId" value="{{$parentCat->id}}" id="user_name" autocomplete="off">
                                                 <div class="form_prompt"></div>
                                             </div>
                                         </div>
                                         <div class="item">
                                             <div class="label"><span class="require-field">*</span>&nbsp;英文名：</div>
                                             <div class="value">
-                                                <input type="text" class="text" name="enName" value="" id="user_name" autocomplete="off">
+                                                <input type="text" class="text" name="enName" value="{{$parentCat->enName}}" id="user_name" autocomplete="off">
                                                 <div class="form_prompt"></div>
                                             </div>
                                         </div>
@@ -39,9 +40,13 @@
                                             <div class="value" id="selectid">
                                                 <select name="pid" id="">
                                                     <option value="0">&nbsp;&nbsp;&nbsp;&nbsp;顶级分类</option>
-                                                @foreach($items as $item)
-                                                    <option value="{{$item->id}}">{{$item->pre.$item->catName}}</option>
-                                                        @endforeach
+                                                    @foreach($items as $item)
+                                                        <option value="{{$item->id}}"
+                                                            @if($parentCat->pid == $item->id)
+                                                                selected
+                                                                @endif
+                                                        >{{$item->pre.$item->catName}}</option>
+                                                    @endforeach
                                                 </select>
                                             </div>
                                         </div>

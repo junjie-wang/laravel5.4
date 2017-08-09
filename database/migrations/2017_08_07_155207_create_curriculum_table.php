@@ -16,7 +16,7 @@ class CreateCurriculumTable extends Migration
         Schema::create('curriculums', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name', 50)->default('');
-            $table->string('category', 20)->default('');
+            $table->string('category_id', 20)->default('');
             $table->decimal('price', 7, 2)->default(0);
             $table->integer('serialise')->default(0);
             $table->string('description', 200)->default('');

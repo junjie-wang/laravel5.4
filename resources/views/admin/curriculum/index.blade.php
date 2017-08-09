@@ -17,20 +17,30 @@
                     <div class="fl">
                         <a href="{{url('admin/curriculums/create')}}"><div class="fbutton"><div class="add" title="添加新课程"><span><i class="icon icon-plus"></i>添加新课程</span></div></div></a>
                     </div>
-                    <form action="javascript:searchArticle()" name="searchForm">
+                    {{--<form action="" name="searchForm" method="post">--}}
+                        {{csrf_field()}}
                         <div class="search">
                             <div class="select_w120 imitate_select">
-                                <div class="cite">全部分类</div>
-                                <ul>
-                                    <li><a href="javascript:;" data-value="0">全部分类</a></li>
-                                </ul>
+                                <select name="category" id="category_id" style="width: 122px;height: 30px;border:1px solid #fff">
+                                    <option value="0">全部分类</option>
+                                    @foreach($items as $item)
+                                    <option value="{{$item->id}}">{{$item->pre.$item->catName}}</option>
+                                    @endforeach
+                                </select>
+                            </div>
+                            <div class="select_w120 imitate_select">
+                                <select name="status" id="curriculum_status" style="width: 122px;height: 30px;border:1px solid #fff">
+                                    <option value="0">课程状态</option>
+                                    <option value="1">已发布</option>
+                                    <option value="-1">已删除</option>
+                                </select>
                             </div>
 
                             <div class="input">
-                                <input type="text" name="keyword" class="text nofocus" placeholder="课程标题" autocomplete="off"><input type="submit" value="" class="not_btn">
+                                <input type="text" name="keyword" class="text nofocus" placeholder="课程名称" autocomplete="off" id="curriculum_name"><input type="submit" value="" class="not_btn" onclick="searchInfo()">
                             </div>
                         </div>
-                    </form>
+                    {{--</form>--}}
                 </div>
                 <div class="common-content">
                     <form method="POST" action="article.php?act=batch_remove" name="listForm">
@@ -56,7 +66,7 @@
                                     <td class="sign"><div class="tDiv"><input type="checkbox" name="checkboxes[]" value="64" class="checkbox" id="checkbox_64"><label for="checkbox_64" class="checkbox_stars"></label></div></td>
                                     <td><div class="tDiv">{{$curriculum->id}}</div></td>
                                     <td><div class="tDiv">{{$curriculum->name}}</div></td>
-                                    <td><div class="tDiv">{{$curriculum->category}}</div></td>
+                                    <td><div class="tDiv">{{$curriculum->category_id}}</div></td>
                                     <td><div class="tDiv">{{$curriculum->price}}</div></td>
                                     <td><div class="tDiv">
                                             @if($curriculum->serialise == 0)
@@ -92,28 +102,28 @@
                                 <tr>
                                     <td colspan="12">
                                         <div class="tDiv">
-                                            {{--<div class="tfoot_btninfo">--}}
-                                                {{--<input type="hidden" name="act" value="batch">--}}
-                                                {{--<div class="item">--}}
-                                                    {{--<div class="label_value">--}}
-                                                        {{--<div id="type_select" class="imitate_select select_w120">--}}
-                                                            {{--<div class="cite">请选择...</div>--}}
-                                                            {{--<ul>--}}
-                                                                {{--<li><a href="javascript:;" data-value="" class="ftx-01">请选择...</a></li>--}}
-                                                                {{--<li><a href="javascript:;" data-value="button_remove" class="ftx-01">批量删除</a></li>--}}
-                                                                {{--<li><a href="javascript:;" data-value="button_hide" class="ftx-01">批量隐藏</a></li>--}}
-                                                                {{--<li><a href="javascript:;" data-value="button_show" class="ftx-01">批量显示</a></li>--}}
-                                                                {{--<li><a href="javascript:;" data-value="move_to" class="ftx-01">转移到分类</a></li>--}}
-                                                            {{--</ul>--}}
-                                                            {{--<input name="type" type="hidden" value="" id="type_val">--}}
-                                                        {{--</div>--}}
-                                                    {{--</div>--}}
-                                                {{--</div>--}}
-                                                {{--<input type="submit" value="确定" id="btnSubmit" name="btnSubmit" ectype="btnSubmit" class="btn btn_disabled" disabled="">--}}
-                                            {{--</div>--}}
+                                            <div class="tfoot_btninfo">
+                                                <input type="hidden" name="act" value="batch">
+                                                <div class="item">
+                                                    <div class="label_value">
+                                                        <div id="type_select" class="imitate_select select_w120">
+                                                            <div class="cite">请选择...</div>
+                                                            <ul>
+                                                                <li><a href="javascript:;" data-value="" class="ftx-01">请选择...</a></li>
+                                                                <li><a href="javascript:;" data-value="button_remove" class="ftx-01">批量删除</a></li>
+                                                                <li><a href="javascript:;" data-value="button_hide" class="ftx-01">批量隐藏</a></li>
+                                                                <li><a href="javascript:;" data-value="button_show" class="ftx-01">批量显示</a></li>
+                                                                <li><a href="javascript:;" data-value="move_to" class="ftx-01">转移到分类</a></li>
+                                                            </ul>
+                                                            <input name="type" type="hidden" value="" id="type_val">
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <input type="submit" value="确定" id="btnSubmit" name="btnSubmit" ectype="btnSubmit" class="btn btn_disabled" disabled="">
+                                            </div>
                                             <div class="list-page">
                                                 <div id="turn-page">
-                                                    {{$curriculums->links()}}
+
                                                 </div>
 
                                             </div>
@@ -129,4 +139,26 @@
             </div>
         </div>
     </div>
+    <script>
+        function searchInfo() {
+            var search_category = $('#category_id').val();
+            var search_status = $('#curriculum_status').val();
+            var search_name = $('#curriculum_name').val();
+            $.ajax({
+                type: 'POST',
+                url: '/admin/curriculums',
+                data: { category_id:search_category, status:search_status, name:search_name},
+                dataType: 'json',
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="_token"]').attr('content')
+                },
+                success: function(data){
+                    console.log(data.status);
+                },
+                error: function(xhr, type){
+                    alert('Ajax error!')
+                }
+            });
+        }
+    </script>
 @endsection
