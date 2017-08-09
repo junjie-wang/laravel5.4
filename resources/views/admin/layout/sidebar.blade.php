@@ -128,16 +128,9 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_02_cat_and_goods"></i><h4>课程管理</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                        <li class="curr"><s></s><a href="admin/curriculums" data-url="admin/curriculums" data-param="menushopping|01_goods_list" target="workspace">课程列表</a></li>
-                        <li ><s></s><a href="javascript:void(0);" data-url="category.php?act=list" data-param="menushopping|03_category_manage" target="workspace">课程分类</a></li>
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="comment_manage.php?act=list" data-param="menushopping|05_comment_manage" target="workspace">用户评论</a></li>--}}
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="brand.php?act=list" data-param="menushopping|06_goods_brand" target="workspace">品牌管理</a></li>--}}
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="goods_type.php?act=manage" data-param="menushopping|08_goods_type" target="workspace">商品类型</a></li>--}}
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="goods_batch.php?act=select" data-param="menushopping|15_batch_edit" target="workspace">商品批量修改</a></li>--}}
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="discuss_circle.php?act=list" data-param="menushopping|discuss_circle" target="workspace">网友讨论圈</a></li>--}}
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="gallery_album.php?act=list" data-param="menushopping|gallery_album" target="workspace">图片库管理</a></li>--}}
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="goods_report.php?act=list" data-param="menushopping|goods_report" target="workspace">举报管理</a></li>--}}
-                        {{--<li ><s></s><a href="javascript:void(0);" data-url="sale_notice.php?act=list" data-param="menushopping|sale_notice" target="workspace">商品降价通知</a></li>--}}
+                        <li class="curr"><s></s><a href="admin/curriculums" data-url="admin/curriculums" data-param="menushopping|01_goods_list" target="workspace">课程管理</a></li>
+                        <li ><s></s><a href="javascript:void(0);" data-url="category.php?act=list" data-param="menushopping|03_category_manage" target="workspace">课程推荐</a></li>
+                        <li ><s></s><a href="javascript:void(0);" data-url="comment_manage.php?act=list" data-param="menushopping|05_comment_manage" target="workspace">课程统计</a></li>
                     </ul>
                 </div>
             </div>
@@ -257,7 +250,10 @@
             <div class="item">
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>分类管理</h4></a></div>
                 <div class="sub-menu">
-
+                    <ul>
+                    <li class="curr"><s></s><a href="/admin/categories"data-param="menushopping|affiliate" target="workspace">课程分类</a></li>
+                    <li ><s></s><a href="javascript:void(0);" data-url="affiliate_ck.php?act=list" data-param="menushopping|affiliate_ck" target="workspace">班级分类</a></li>
+                    </ul>
                 </div>
             </div>
             @endcan

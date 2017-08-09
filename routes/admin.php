@@ -18,7 +18,7 @@ Route::group(['prefix' => 'admin'], function(){
         Route::post('/reset', '\App\Admin\Controllers\LoginController@resetPassword');
         Route::get('/show', '\App\Admin\Controllers\NoticeController@show');
 //        Route::group(['middleware' => 'can:platform'], function(){
-            Route::group(['middleware' => 'can:system_setting'], function(){
+            Route::group(['middleware' => 'can:roles_setting'], function(){
                 //管理人员模块
                 Route::get('users', '\App\Admin\Controllers\UserController@index');
                 Route::get('users/create', '\App\Admin\Controllers\UserController@create');
@@ -43,6 +43,19 @@ Route::group(['prefix' => 'admin'], function(){
         Route::group(['middleware' => 'can:curriculum_manager'], function(){
             //课程管理
             Route::get('curriculums', '\App\Admin\Controllers\CurriculumController@index');
+            Route::get('curriculums/create', '\App\Admin\Controllers\CurriculumController@create');
+            Route::post('curriculums/create', '\App\Admin\Controllers\CurriculumController@create');
+        });
+        Route::group(['middleware' => 'can:classify_manager'], function(){
+            //分类管理
+            Route::get('categories', '\App\Admin\Controllers\CategoryController@index');
+            Route::get('categories/create', '\App\Admin\Controllers\CategoryController@create');
+            Route::post('categories/create', '\App\Admin\Controllers\CategoryController@create');
+            Route::get('categories/{category}/createChild', '\App\Admin\Controllers\CategoryController@createChild');
+            Route::post('categories/{category}/createChild', '\App\Admin\Controllers\CategoryController@createChild');
+            Route::get('categories/{category}/update', '\App\Admin\Controllers\CategoryController@update');
+            Route::post('categories/{category}/update', '\App\Admin\Controllers\CategoryController@update');
+            Route::get('categories/{category}/delete', '\App\Admin\Controllers\CategoryController@delete');
         });
 //        Route::group(['middleware' => 'can:user'], function(){
             Route::group(['middleware' => 'can:teacher_manager'], function(){

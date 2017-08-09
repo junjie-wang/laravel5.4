@@ -18,6 +18,7 @@ class CreateCurriculumTable extends Migration
             $table->string('name', 50)->default('');
             $table->string('category', 20)->default('');
             $table->decimal('price', 7, 2)->default(0);
+            $table->integer('serialise')->default(0);
             $table->string('description', 200)->default('');
             $table->tinyInteger('status')->defult(0);
             $table->timestamps();

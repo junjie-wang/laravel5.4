@@ -21,6 +21,21 @@
         float: left;
         width: 30px;
     }
+     #selectid {
+         background: url('') no-repeat;
+         width: 320px;
+         height: 30px;
+         overflow: hidden;
+     }
+
+    #selectid select {
+        font-size: 16px;;
+        background: transparent;
+        border: 1px solid #dbdbdb;
+        padding-left: 10px;
+        width: 320px;
+        height: 100%;
+    }
 </style>
 </head>
 
