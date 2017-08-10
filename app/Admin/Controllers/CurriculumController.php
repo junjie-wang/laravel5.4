@@ -15,16 +15,17 @@ class CurriculumController extends Controller
         $items = $cat->getCategoryInfoTest();
         if ($request->isMethod('post')) {
             $where = [
-                ['category_id', '=', request('category')],
+                ['category_id', '=', request('category_id')],
                 ['status', '=', request('status')],
-                ['name', 'like', '%'.request('keyword').'%']
+                ['name', 'like', '%'.request('name').'%']
             ];
-            if (request('category') == 0) unset($where[0]);
+            if (request('category_id') == 0) unset($where[0]);
+            if (request('status') == null) unset($where[1]);
             $curriculums = Curriculum::where($where)->orderBy('id', 'desc')->paginate(15);
             foreach ($curriculums as &$curriculum) {
                 $curriculum['category_id'] = $curriculum->category->catName;
             }
-            return view('admin/curriculum/index', compact('curriculums', 'items'));
+            return $curriculums;
         }
         $curriculums = Curriculum::orderBy('id', 'desc')->paginate(15);
         foreach ($curriculums as &$curriculum) {
