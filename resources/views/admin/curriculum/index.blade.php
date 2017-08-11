@@ -155,7 +155,6 @@
                 success: function(data){
                     var str = '';
                     $("#removeInfo").nextAll().remove();
-                    console.log(data.data);
                     $.each(data.data, function (i,e) {
                         str += "<tr class=''><td class='sign'><div class='tDiv'><input type='checkbox' name='checkboxes[]' value='64' class='checkbox' id='checkbox_64'><label for='checkbox_64' class='checkbox_stars'></label></div></td>";
                         str += "<td><div class='tDiv'>"+e.id+"</div></td>";

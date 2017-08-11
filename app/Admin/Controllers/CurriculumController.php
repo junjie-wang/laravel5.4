@@ -61,4 +61,56 @@ class CurriculumController extends Controller
         $items = $cat->getCategoryInfoTest();
         return view('admin/curriculum/create', compact('items'));
     }
+    
+    public function recommend(Request $request)
+    {
+        $cat = new Category();
+        $items = $cat->getCategoryInfoTest();
+        if ($request->isMethod('post')) {
+            $where = [
+                ['category_id', '=', request('category_id')],
+                ['status', '=', request('status')],
+                ['name', 'like', '%'.request('name').'%'],
+                ['recommend', '=', 1]
+            ];
+            if (request('category_id') == 0) unset($where[0]);
+            if (request('status') == null) unset($where[1]);
+            $curriculums = Curriculum::where($where)->orderBy('id', 'desc')->paginate(15);
+            foreach ($curriculums as &$curriculum) {
+                $curriculum['category_id'] = $curriculum->category->catName;
+            }
+            return $curriculums;
+        }
+        $curriculums = Curriculum::where('recommend', 1)->orderBy('id', 'desc')->paginate(15);
+        foreach ($curriculums as &$curriculum) {
+            $curriculum['category_id'] = $curriculum->category->catName;
+        }
+        return view('admin/curriculum/recommend', compact('curriculums', 'items'));
+    }
+
+    public function changeOrder(Request $request)
+    {
+        $this->validate(request(), [
+            'id' => 'required|integer',
+            'list_order' => 'required|integer'
+        ], [
+            'list_order' => '序号'
+        ]);
+        $data = [
+          'list_order' => request('list_order')
+        ];
+        $res = Curriculum::where('id', request('id'))->update($data);
+        if ($res) {
+            return redirect('admin/recommend');
+        } else {
+            return back();
+        }
+    }
+
+    public function isRecommend($curriculumId)
+    {
+        Curriculum::where('id', $curriculumId)->update(['recommend' => 0]);
+//        return redirect('admin/recommend');
+        return back();
+    }
 }

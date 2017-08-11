@@ -20,6 +20,8 @@ class CreateCurriculumTable extends Migration
             $table->decimal('price', 7, 2)->default(0);
             $table->integer('serialise')->default(0);
             $table->string('description', 200)->default('');
+            $table->integer('list_order')->defult(0);
+            $table->tinyInteger('recommend')->defult(0);
             $table->tinyInteger('status')->defult(0);
             $table->timestamps();
         });

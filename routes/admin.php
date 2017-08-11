@@ -46,6 +46,11 @@ Route::group(['prefix' => 'admin'], function(){
             Route::post('curriculums', '\App\Admin\Controllers\CurriculumController@index');
             Route::get('curriculums/create', '\App\Admin\Controllers\CurriculumController@create');
             Route::post('curriculums/create', '\App\Admin\Controllers\CurriculumController@create');
+            //课程推荐
+            Route::get('recommend', '\App\Admin\Controllers\CurriculumController@recommend');
+            Route::post('recommend', '\App\Admin\Controllers\CurriculumController@recommend');
+            Route::post('changeOrder', '\App\Admin\Controllers\CurriculumController@changeOrder');
+            Route::get('isRecommend/{curriculumId}', '\App\Admin\Controllers\CurriculumController@isRecommend');
         });
         Route::group(['middleware' => 'can:classify_manager'], function(){
             //分类管理
