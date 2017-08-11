@@ -23,7 +23,7 @@
 
             <div class="common-content">
                 <div class="mian-info">
-                    <form name="theForm" method="post" id="user_form" action="/admin/notices">
+                    <form name="theForm" method="post" id="user_form" action="{{url('/admin/notices')}}">
                         {{csrf_field()}}
                         <div class="switch_info">
                             <div class="item">

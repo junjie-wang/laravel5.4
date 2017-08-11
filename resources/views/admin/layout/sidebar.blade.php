@@ -32,9 +32,9 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_07_content"></i><h4>角色设置</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                        <li class="curr"><a href="/admin/permissions"data-param="menuplatform|02_articlecat_list" target="workspace">权限管理</a></li>
-                        <li ><s></s><a href="/admin/users" data-param="menuplatform|03_article_list" target="workspace">管理员列表</a></li>
-                        <li ><s></s><a href="/admin/roles"data-param="menuplatform|04_article_list" target="workspace">角色管理</a></li>
+                        <li class="curr"><a href="{{url('/admin/permissions')}}"data-param="menuplatform|02_articlecat_list" target="workspace">权限管理</a></li>
+                        <li ><s></s><a href="{{url('/admin/users')}}" data-param="menuplatform|03_article_list" target="workspace">管理员列表</a></li>
+                        <li ><s></s><a href="{{url('/admin/roles')}}"data-param="menuplatform|04_article_list" target="workspace">角色管理</a></li>
                     </ul>
                 </div>
             </div>
@@ -56,8 +56,8 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_02_cat_and_goods"></i><h4>课程管理</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                        <li class="curr"><s></s><a href="admin/curriculums" data-url="admin/curriculums" data-param="menushopping|01_goods_list" target="workspace">课程管理</a></li>
-                        <li ><s></s><a href="admin/recommend" data-url="category.php?act=list" data-param="menushopping|03_category_manage" target="workspace">课程推荐</a></li>
+                        <li class="curr"><s></s><a href="{{url('admin/curriculums')}}" data-url="admin/curriculums" data-param="menushopping|01_goods_list" target="workspace">课程管理</a></li>
+                        <li ><s></s><a href="{{url('admin/recommend')}}" data-url="category.php?act=list" data-param="menushopping|03_category_manage" target="workspace">课程推荐</a></li>
                         <li ><s></s><a href="javascript:void(0);" data-url="comment_manage.php?act=list" data-param="menushopping|05_comment_manage" target="workspace">课程统计</a></li>
                     </ul>
                 </div>
@@ -146,7 +146,7 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_17_merchants"></i><h4>分类管理</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                    <li class="curr"><s></s><a href="/admin/categories"data-param="menushopping|affiliate" target="workspace">课程分类</a></li>
+                    <li class="curr"><s></s><a href="{{url('/admin/categories')}}"data-param="menushopping|affiliate" target="workspace">课程分类</a></li>
                     <li ><s></s><a href="javascript:void(0);" data-url="affiliate_ck.php?act=list" data-param="menushopping|affiliate_ck" target="workspace">班级分类</a></li>
                     </ul>
                 </div>
@@ -201,7 +201,7 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_06_stats"></i><h4>全站站内通知</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                    <li class="curr"><s></s><a href="admin/notices" data-param="finance|exchange_count" target="workspace">通知列表</a></li>
+                    <li class="curr"><s></s><a href="{{url('admin/notices')}}" data-param="finance|exchange_count" target="workspace">通知列表</a></li>
                     </ul>
                 </div>
             </div>
@@ -271,7 +271,7 @@
                 <div class="tit"><a href="javascript:void(0)"><i class="nav_icon icon_21_cloud"></i><h4>教师管理</h4></a></div>
                 <div class="sub-menu">
                     <ul>
-                        <li class="curr"><s></s><a href="/admin/teachers" data-param="menuinformation|01_cloud_services" target="workspace">教师别表</a></li>
+                        <li class="curr"><s></s><a href="{{url('/admin/teachers')}}" data-param="menuinformation|01_cloud_services" target="workspace">教师别表</a></li>
                     </ul>
                 </div>
             </div>

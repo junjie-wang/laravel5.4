@@ -16,7 +16,7 @@
             <!--商品分类列表-->
             <div class="common-head">
                 <div class="fl">
-                    <a href="/admin/roles/create"><div class="fbutton"><div class="add" title="添加角色"><span><i class="icon icon-plus"></i>添加角色</span></div></div></a>
+                    <a href="{{url('/admin/roles/create')}}"><div class="fbutton"><div class="add" title="添加角色"><span><i class="icon icon-plus"></i>添加角色</span></div></div></a>
                 </div>
             </div>
             <div class="common-content">
@@ -38,7 +38,7 @@
                                 <td><div class="tDiv">{{$role->description}}</div></td>
                                 <td class="handle">
                                     <div class="tDiv a3">
-                                        <a href="/admin/roles/{{$role->id}}/permission" class="btn_see"><i class="sc_icon sc_icon_see"></i>权限管理</a>
+                                        <a href="{{url('/admin/roles/'.$role->id.'/permission')}}" class="btn_see"><i class="sc_icon sc_icon_see"></i>权限管理</a>
                                     </div>
                                 </td>
                             </tr>

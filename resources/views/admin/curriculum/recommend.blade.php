@@ -66,7 +66,7 @@
                                             <div class="tDiv a3">
                                                 <a href="javascript:void(0);" class="btn_edit" ><i class="icon icon-edit"></i>修改排序</a>
                                                 <input type="hidden" class="list_order" value="{{$curriculum->id}}">
-                                                <a href="/admin/isRecommend/{{$curriculum->id}}" class="btn_trash"><i class="icon icon-trash"></i>取消推荐</a>
+                                                <a href="{{url('/admin/isRecommend/'.$curriculum->id)}}" class="btn_trash"><i class="icon icon-trash"></i>取消推荐</a>
                                             </div>
                                         </td>
                                     </tr>
@@ -95,7 +95,7 @@
 <p style="font-size: 24px;margin: 20px;">设置推荐课程</p>
             <hr>
             <div style="">
-                <form action="/admin/changeOrder" method="post">
+                <form action="{{url('/admin/changeOrder')}}" method="post">
                     {{csrf_field()}}
                     <div style="width: 100%;" class="clear">
                     <div style="width:6%;font-size: 18px; margin: 30px; float: left;">序号</div>

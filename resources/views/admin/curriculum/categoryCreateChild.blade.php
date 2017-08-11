@@ -15,7 +15,7 @@
             <div class="flexilist">
                 <div class="common-content">
                     <div class="mian-info">
-                        <form method="POST" action="/admin/categories/{{$category}}/createChild" name="theFrom" id="role_form">
+                        <form method="POST" action="{{url('/admin/categories/'.$category.'/createChild')}}" name="theFrom" id="role_form">
                             {{csrf_field()}}
                             <div class="switch_info business_info" style="background:none;">
                                 <div class="step">
@@ -23,7 +23,7 @@
                                         <div class="item">
                                             <div class="label"><span class="require-field">*</span>&nbsp;分类名：</div>
                                             <div class="value">
-                                                <input type="text" class="text" name="catName" value="" id="user_name" autocomplete="off">
+                                                <input type="text" class="text" name="catName" value="{{url('')}}" id="user_name" autocomplete="off">
                                                 <div class="form_prompt"></div>
                                             </div>
                                         </div>

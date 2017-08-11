@@ -15,7 +15,7 @@
             <div class="flexilist">
                 <div class="common-head">
                     <div class="fl">
-                        <a href="/admin/permissions/create"><div class="fbutton"><div class="add" title="添加角色"><span><i class="icon icon-plus"></i>添加权限</span></div></div></a>
+                        <a href="{{url('/admin/permissions/create')}}"><div class="fbutton"><div class="add" title="添加角色"><span><i class="icon icon-plus"></i>添加权限</span></div></div></a>
                     </div>
                 </div>
                 <div class="common-content">

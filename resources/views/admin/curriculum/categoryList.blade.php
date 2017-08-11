@@ -16,7 +16,7 @@
                 <!--商品分类列表-->
                 <div class="common-head">
                     <div class="fl">
-                        <a href="/admin/categories/create"><div class="fbutton"><div class="add" title="添加分类"><span><i class="icon icon-plus"></i>添加分类</span></div></div></a>
+                        <a href="{{url('/admin/categories/create')}}"><div class="fbutton"><div class="add" title="添加分类"><span><i class="icon icon-plus"></i>添加分类</span></div></div></a>
                     </div>
                 </div>
                 <div class="common-content">
@@ -38,9 +38,9 @@
                                     <td><div class="tDiv">{{$item->enName}}</div></td>
                                     <td class="handle">
                                         <div class="tDiv a3">
-                                            <a href="/admin/categories/{{$item->id}}/createChild" class="btn_see">添加子分类</a>
-                                            <a href="/admin/categories/{{$item->id}}/update" class="btn_see">编辑</a>
-                                            <a href="/admin/categories/{{$item->id}}/delete" class="btn_see">删除</a>
+                                            <a href="{{url('/admin/categories/'.$item->id.'/createChild')}}" class="btn_see">添加子分类</a>
+                                            <a href="{{url('/admin/categories/'.$item->id.'/update')}}" class="btn_see">编辑</a>
+                                            <a href="{{url('/admin/categories/'.$item->id.'/delete')}}" class="btn_see">删除</a>
                                         </div>
                                     </td>
                                 </tr>

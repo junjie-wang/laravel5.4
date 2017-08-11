@@ -15,7 +15,7 @@
             <div class="flexilist">
                 <div class="common-content">
                     <div class="mian-info">
-                        <form method="POST" action="/admin/users/{{$user->id}}/role" name="theFrom" id="privilege_frm">
+                        <form method="POST" action="{{url('/admin/users/'.$user->id.'/role')}}" name="theFrom" id="privilege_frm">
                             <div class="switch_info business_info" style="background:none;">
                                 {{csrf_field()}}
                                 <div class="step">

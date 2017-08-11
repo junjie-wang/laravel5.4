@@ -11,7 +11,7 @@
     <link href="/css/font-awesome.min.css" tppabs="http://dsc.com/admin/css/font-awesome.min.css" rel="stylesheet" type="text/css" />
     <link href="/css/perfect-scrollbar.min.css" tppabs="http://dsc.com/admin/css/perfect-scrollbar.min.css" rel="stylesheet" type="text/css">
     <link href="/css/purebox.css" tppabs="http://dsc.com/admin/css/purebox.css" rel="stylesheet" type="text/css">
-    <link rel="stylesheet" type="text/css" href="/js/spectrum-master/spectrum.css" tppabs="http://dsc.com/admin/js/spectrum-master/spectrum.css">
+    <link rel="stylesheet" type="text/css" href="{{asset('/js/spectrum-master/spectrum.css')}}" tppabs="http://dsc.com/admin/js/spectrum-master/spectrum.css">
     <script type="text/javascript" src="{{asset('js/jquery-1.9.1.min.js')}}"></script>
 <style>
     .pagination {

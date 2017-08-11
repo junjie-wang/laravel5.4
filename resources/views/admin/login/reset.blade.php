@@ -16,7 +16,7 @@
 
                 <div class="common-content">
                     <div class="mian-info">
-                        <form method="POST" action="/admin/reset" name="theFrom" id="role_form">
+                        <form method="POST" action="{{url('/admin/reset')}}" name="theFrom" id="role_form">
                             {{csrf_field()}}
                             <div class="switch_info">
                                 <div class="item">

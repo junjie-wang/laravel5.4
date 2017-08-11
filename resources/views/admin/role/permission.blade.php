@@ -20,7 +20,7 @@
                 {{--</div>--}}
                 <div class="common-content">
                     <div class="mian-info">
-                        <form method="POST" action="/admin/roles/{{$role->id}}/permission" name="theFrom" id="privilege_frm">
+                        <form method="POST" action="{{url('/admin/roles/'.$role->id.'/permission')}}" name="theFrom" id="privilege_frm">
                             {{csrf_field()}}
                             <div class="switch_info business_info" style="background:none;">
                                 @foreach($trees as $item)

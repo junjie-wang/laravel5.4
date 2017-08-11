@@ -23,7 +23,7 @@
     {{--<script type="text/javascript" src="../js/utils.js" tppabs="http://dsc.com/js/utils.js"></script>--}}
     {{--<script type="text/javascript" src="js/listtable.js" tppabs="http://dsc.com/admin/js/listtable.js"></script>--}}
     {{--<script type="text/javascript" src="js/listtable_pb.js" tppabs="http://dsc.com/admin/js/listtable_pb.js"></script>--}}
-    <script type="text/javascript" src="js/perfect-scrollbar.min.js"
+    <script type="text/javascript" src="{{asset('js/perfect-scrollbar.min.js')}}"
             tppabs="http://dsc.com/admin/js/perfect-scrollbar.min.js"></script>
     {{--<script type="text/javascript" src="js/dsc_admin2.0.js" tppabs="http://dsc.com/admin/js/dsc_admin2.0.js"></script>--}}
     <script type="text/javascript" src="js/jquery-ui/jquery-ui.min.js"
@@ -33,14 +33,14 @@
     {{--tppabs="http://dsc.com/js/calendar/calendar.min.js"></script>--}}
     {{--<script type="text/javascript" src="js/jquery.bgColorSelector.js"--}}
     {{--tppabs="http://dsc.com/admin/js/jquery.bgColorSelector.js"></script>--}}
-    <script type="text/javascript" src="js/jquery.validation.min.js"
+    <script type="text/javascript" src="{{asset('js/jquery.validation.min.js')}}"
             tppabs="http://dsc.com/admin/js/jquery.validation.min.js"></script>
-    <script type="text/javascript" src="js/common.js" tppabs="http://dsc.com/admin/js/common.js"></script>
+    <script type="text/javascript" src="{{asset('js/common.js')}}" tppabs="http://dsc.com/admin/js/common.js"></script>
     {{--<script type="text/javascript" src="../js/jquery.form.js" tppabs="http://dsc.com/js/jquery.form.js"></script>--}}
-    <script type="text/javascript" src="js/jquery.nyroModal.js"
+    <script type="text/javascript" src="{{asset('js/jquery.nyroModal.js')}}"
             tppabs="http://dsc.com/admin/js/jquery.nyroModal.js"></script>
     <!--[if lt IE 9]>
-    <script src="js/css3-mediaqueries.js" tppabs="http://dsc.com/admin/js/css3-mediaqueries.js"></script>
+    <script src="{{asset('js/css3-mediaqueries.js')}}" tppabs="http://dsc.com/admin/js/css3-mediaqueries.js"></script>
     <![endif]-->
     <script language="JavaScript">
         /*这里把JS用到的所有语言都赋值到这里*/

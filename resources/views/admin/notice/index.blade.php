@@ -44,8 +44,8 @@
                                     <td><div class="tDiv">{{$notice->title}}</div></td>
                                     <td class="handle">
                                         <div class="tDiv a2">
-                                            <a href="/admin/teachers/{{$notice->id}}/update" class="btn_edit"><i class="icon icon-edit"></i>编辑</a>
-                                            <a href="javascript:if(confirm('确实要删除吗?'))location='/admin/teachers/{{$notice->id}}/delete'" class="btn_trash"><i class="icon icon-trash"></i>删除</a>
+                                            <a href="{{url('/admin/teachers/'.$notice->id.'/update')}}" class="btn_edit"><i class="icon icon-edit"></i>编辑</a>
+                                            <a href="javascript:if(confirm('确实要删除吗?'))location='{{url('/admin/teachers/'.$notice->id.'/delete')}}'" class="btn_trash"><i class="icon icon-trash"></i>删除</a>
                                         </div>
                                     </td>
                                 </tr>

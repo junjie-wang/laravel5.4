@@ -55,8 +55,8 @@
                                     <td class="handle">
                                         <div class="tDiv a2">
                                             {{--<a href="/admin/users/{{$teacher->id}}/role" class="btn_region"><i class="icon icon-cog"></i>角色管理</a>--}}
-                                            <a href="/admin/teachers/{{$teacher->id}}/update" class="btn_edit"><i class="icon icon-edit"></i>编辑</a>
-                                            <a href="javascript:if(confirm('确实要删除吗?'))location='/admin/teachers/{{$teacher->id}}/delete'" class="btn_trash"><i class="icon icon-trash"></i>删除</a>
+                                            <a href="{{url('/admin/teachers/'.$teacher->id.'/update')}}" class="btn_edit"><i class="icon icon-edit"></i>编辑</a>
+                                            <a href="javascript:if(confirm('确实要删除吗?'))location='{{url('/admin/teachers/'.$teacher->id.'/delete')}}'" class="btn_trash"><i class="icon icon-trash"></i>删除</a>
                                         </div>
                                     </td>
                                 </tr>
