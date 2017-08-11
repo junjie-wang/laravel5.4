@@ -52,8 +52,8 @@
                                     <td><div class="tDiv">{{$user->updated_at}}</div></td>
                                     <td class="handle">
                                         <div class="tDiv a2">
-                                            <a href="/admin/users/{{$user->id}}/role" class="btn_region"><i class="icon icon-cog"></i>角色管理</a>
-                                            <a href="/admin/users/{{$user->id}}/edit" class="btn_edit"><i class="icon icon-edit"></i>编辑</a>
+                                            <a href="{{url('/admin/users/'.$user->id.'/role')}}" class="btn_region"><i class="icon icon-cog"></i>角色管理</a>
+                                            <a href="{{url('/admin/users/'.$user->id.'/edit')}}" class="btn_edit"><i class="icon icon-edit"></i>编辑</a>
                                             <a href="javascript:if(confirm('确实要删除吗?'))location='{{url('/admin/users/'.$user->id.'/delete')}}'" class="btn_trash"><i class="icon icon-trash"></i>删除</a>
                                         </div>
                                     </td>
