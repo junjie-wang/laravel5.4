@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Jobs\SendMessage;
 use App\Models\Notice;

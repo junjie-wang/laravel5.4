@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Admin\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\AdminUser;
 use App\Post;
 use Illuminate\Http\Request;
-use App\Admin\Controllers\Controller;
+use App\Http\Controllers\Controller;
 
 class RoleController extends Controller
 {

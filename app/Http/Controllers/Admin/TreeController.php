@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Admin\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Tree;
 use Illuminate\Http\Request;
